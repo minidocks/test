@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "=> Resolve symlinks"
 dir="$(dirname "$BASH_SOURCE")/../"
-cp -aL "$dir/../latest/." "$dir"
+cp -afLr "$dir/../latest/." "$dir"
