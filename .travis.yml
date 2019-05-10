@@ -1,0 +1,5 @@
+script:
+  - echo "$TEST_VAR"
+  - echo "$TEST2_VAR"
+  - echo "$REGISTRY_PASSWORD" | docker login -u "$REGISTRY_LOGIN" --password-stdin
+  - docker --version
