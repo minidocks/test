@@ -1,0 +1,12 @@
+name: Build and publish docker image
+on: [push]
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/setup-qemu-action@v1
+      - uses: docker/setup-buildx-action@v1
+      - run: wget -O run https://raw.githubusercontent.com/minidocks/images/master/run
+      - run: bash ./run.sh build test/latest --dir . --platform=linux/amd64,linux/arm64
